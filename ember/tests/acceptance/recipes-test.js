@@ -8,14 +8,24 @@ test('visiting /recipes', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/recipes');
+    assert.equal(find('ul.recipes li:first').text(), 'tacos');
   });
+
 });
 
 test('should add new recipe', function(assert) {
-  visit('/recipes/new');
+  visit('/recipes');
+
+  click('a.new');
+  andThen(function() {
+    assert.equal(currentURL(), '/recipes/new');
+  });
 
   andThen(function() {
     assert.equal(currentURL(), '/recipes/new');
     fillIn('input.name', 'tacos');
+    fillIn('textarea.ingredients', 'salt');
+    fillIn('textarea.directions', 'turn oven to 450');
   });
 });
+
