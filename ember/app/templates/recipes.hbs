@@ -1,6 +1,10 @@
 <ul class='recipes'>
   {{#each model as |recipe|}}
-    <li>{{recipe.name}}</li>
+  <li>
+    {{#link-to 'view' recipe}}
+      {{recipe.name}}
+    {{/link-to}}
+  </li>
   {{/each}}
 </ul>
 
