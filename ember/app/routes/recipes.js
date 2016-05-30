@@ -1,10 +1,11 @@
 import Ember from 'ember';
 
-var recipes = [
-  { name: 'tacos', ingredients: 'salt', directions: 'heat oven to 400 degrees'}
-];
+const { $, set } = Ember;
+
 export default Ember.Route.extend({
+  recipes: null,
+
   model() {
-    return recipes;
+    return $.getJSON('/api/recipes');
   }
 });
