@@ -1,17 +1,7 @@
 export default function() {
 
-  this.get('/api/recipes', () => {
-    return {
-      "data":[{
-        "id":"1",
-        "type":"recipes",
-        "attributes":{
-          "name":"tacos",
-          "ingredients":"salt",
-          "directions":"heat oven to 400 degrees"
-        }
-      }]
-    }
+  this.get('/api/recipes', (schema, request) => {
+    return schema.recipes.all();
   });
   // These comments are here to help you get started. Feel free to delete them.
 
