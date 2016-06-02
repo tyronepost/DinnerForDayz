@@ -4,6 +4,9 @@ import moduleForAcceptance from 'dinner-for-dayz-ember/tests/helpers/module-for-
 moduleForAcceptance('Acceptance | recipes');
 
 test('visiting /recipes', function(assert) {
+
+  server.create('recipe');
+
   visit('/recipes');
 
   andThen(function() {
