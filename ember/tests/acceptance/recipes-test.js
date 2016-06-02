@@ -8,7 +8,7 @@ test('visiting /recipes', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/recipes');
-    assert.equal(find('ul.recipes li:first').text(), 'tacos');
+    assert.equal(find('ul.recipes li:first').text().trim(), 'tacos');
   });
 
 });
