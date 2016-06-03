@@ -3,6 +3,11 @@ export default function() {
   this.get('/api/recipes', (schema, request) => {
     return schema.recipes.all();
   });
+
+  this.post('api/recipes', (schema, request) => {
+    let obj = JSON.parse(request.requestBody);
+    schema.recipes.create(obj);
+  });
   // These comments are here to help you get started. Feel free to delete them.
 
   /*

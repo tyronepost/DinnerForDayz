@@ -16,7 +16,10 @@ test('visiting /recipes', function(assert) {
 
 });
 
-test('should add new recipe', function(assert) {
+test('I can add a new recipe', function(assert) {
+
+  server.create('recipe');
+
   visit('/recipes');
 
   click('a.new');
@@ -26,9 +29,15 @@ test('should add new recipe', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/recipes/new');
-    fillIn('input.name', 'tacos');
+    fillIn('input.name', 'lasagna');
     fillIn('textarea.ingredients', 'salt');
     fillIn('textarea.directions', 'turn oven to 450');
+
+  });
+  click('button.submit');
+  andThen(function() {
+    assert.equal(currentURL(), '/recipes');
+    assert.equal(find('ul.recipes li:last').text().trim(), 'lasagna');
   });
 });
 
