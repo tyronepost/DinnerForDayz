@@ -5,6 +5,8 @@ export default Ember.Route.extend({
   actions: {
     saveForm() {
       const { controller } = this;
+      const self = this;
+
       let obj = {
         name: controller.get('name'),
         ingredients: controller.get('ingredients'),
@@ -13,10 +15,13 @@ export default Ember.Route.extend({
 
       let recipe = this.store.createRecord('recipe', obj);
 
-      recipe.save().then(function() {
-        console.log('save successful');
+      recipe.save().then(transitionToRecipes).catch((error) => {
+        console.log(error);
       });
-      this.transitionTo('recipes');
+
+      function transitionToRecipes() {
+        self.transitionTo('recipes');
+      }
     }
   }
 });

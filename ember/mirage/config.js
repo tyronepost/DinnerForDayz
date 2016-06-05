@@ -5,8 +5,9 @@ export default function() {
   });
 
   this.post('api/recipes', (schema, request) => {
-//    let obj = JSON.parse(request.requestBody);
- //   schema.recipes.create(obj);
+    let attrs = JSON.parse(request.requestBody).recipe;
+    let recipe = schema.recipes.create(attrs);
+    return recipe;
   });
   // These comments are here to help you get started. Feel free to delete them.
 

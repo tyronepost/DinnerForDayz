@@ -21,11 +21,7 @@ test('I can add a new recipe', function(assert) {
   server.create('recipe');
 
   visit('/recipes');
-
   click('a.new');
-  andThen(function() {
-    assert.equal(currentURL(), '/recipes/new');
-  });
 
   andThen(function() {
     assert.equal(currentURL(), '/recipes/new');
@@ -34,7 +30,9 @@ test('I can add a new recipe', function(assert) {
     fillIn('textarea.directions', 'turn oven to 450');
 
   });
+
   click('button.submit');
+
   andThen(function() {
     assert.equal(currentURL(), '/recipes');
     assert.equal(find('ul.recipes li:last').text().trim(), 'lasagna');
