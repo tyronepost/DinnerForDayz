@@ -1,0 +1,10 @@
+Name: {{input class='name' value=recipe.name}}
+{{name}}
+<br>
+Ingredients: {{textarea class='ingredients' value=recipe.ingredients}}
+{{ingredients}}
+<br>
+Directions: {{textarea class='directions' value=recipe.directions}}
+{{directions}}
+<br>
+<button class="submit" {{action "saveForm"}}></button>
