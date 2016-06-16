@@ -3,18 +3,19 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   actions: {
-    saveForm() {
-      const { controller, store } = this;
+    save(recipe) {
+//      const { controller, store } = this;
+        const { store } = this;
 
-      let obj = {
-        name: controller.get('name'),
-        ingredients: controller.get('ingredients'),
-        directions: controller.get('directions')
-      };
+//      let obj = {
+//        name: controller.get('name'),
+//        ingredients: controller.get('ingredients'),
+//        directions: controller.get('directions')
+//      };
 
-      let recipe = store.createRecord('recipe', obj);
+      let record = store.createRecord('recipe', recipe);
 
-      recipe.save().then(
+      record.save().then(
         transitionToRecipes.call(this)
       ).catch((error) => {
         console.log(error);

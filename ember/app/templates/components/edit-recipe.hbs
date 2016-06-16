@@ -1,10 +1,10 @@
-Name: {{input class='name' value=recipe.name}}
+Name: {{input class='name' value=(mut (get recipe 'name'))}}
 {{name}}
 <br>
-Ingredients: {{textarea class='ingredients' value=recipe.ingredients}}
+Ingredients: {{textarea class='ingredients' value=(mut (get recipe 'ingredients'))}}
 {{ingredients}}
 <br>
-Directions: {{textarea class='directions' value=recipe.directions}}
+Directions: {{textarea class='directions' value=(mut (get recipe 'directions'))}}
 {{directions}}
 <br>
 <button class="submit" {{action "saveForm"}}></button>
