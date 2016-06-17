@@ -4,15 +4,7 @@ export default Ember.Route.extend({
 
   actions: {
     save(recipe) {
-//      const { controller, store } = this;
-        const { store } = this;
-
-//      let obj = {
-//        name: controller.get('name'),
-//        ingredients: controller.get('ingredients'),
-//        directions: controller.get('directions')
-//      };
-
+      const { store } = this;
       let record = store.createRecord('recipe', recipe);
 
       record.save().then(
