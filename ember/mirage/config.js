@@ -9,6 +9,8 @@ export default function() {
     let recipe = schema.recipes.create(attrs);
     return recipe;
   });
+
+  this.patch('api/recipes/:id');
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
