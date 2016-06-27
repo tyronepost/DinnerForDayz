@@ -7,15 +7,11 @@ export default Ember.Route.extend({
       const { store } = this;
       let record = store.createRecord('recipe', recipe);
 
-      record.save().then(
-        transitionToRecipes.call(this)
-      ).catch((error) => {
+      record.save().then(() => {
+        this.transitionTo('view', record);
+      }).catch((error) => {
         console.log(error);
       });
-
-      function transitionToRecipes() {
-        this.transitionTo('recipes');
-      }
     }
   }
 });
