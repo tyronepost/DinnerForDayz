@@ -10,6 +10,7 @@ export default function() {
     return recipe;
   });
 
+  this.get('api/ingredients/:id');
   this.patch('api/recipes/:id');
   // These comments are here to help you get started. Feel free to delete them.
 
