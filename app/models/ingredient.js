@@ -6,7 +6,7 @@ const {
   Model
 } = DS;
 
-export default DS.Model.extend({
+export default Model.extend({
   recipe: belongsTo('recipe'),
   name: attr('string'),
   amount: attr('number'),

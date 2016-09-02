@@ -1,13 +1,7 @@
 export default function() {
 
-  this.get('/api/recipes', (schema, request) => {
+  this.get('/api/recipes', (schema) => {
     return schema.recipes.all();
-  });
-
-  this.post('api/recipes', (schema, request) => {
-    let attrs = JSON.parse(request.requestBody).recipe;
-    let recipe = schema.recipes.create(attrs);
-    return recipe;
   });
 
   this.get('api/ingredients/:id');
