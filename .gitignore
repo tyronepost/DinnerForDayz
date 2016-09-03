@@ -9,9 +9,12 @@
 /bower_components
 
 # misc
+.idea/
 /.sass-cache
 /connect.lock
 /coverage/*
 /libpeerconnection.log
 npm-debug.log
 testem.log
+.idea/libraries/bower_components_DinnerForDayz.xml
+.idea/libraries/node_modules_DinnerForDayz.xml
