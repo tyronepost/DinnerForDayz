@@ -5,12 +5,12 @@ moduleForAcceptance('Acceptance | recipes');
 
 test('visiting /recipes', function(assert) {
 
-  server.create('recipe');
+  server.createList('recipe', 4);
   visit('/recipes');
 
   andThen(function() {
     assert.equal(currentURL(), '/recipes');
-    assert.equal(find('div.recipes div:first div.name').text().trim(), 'tacos');
+    assert.equal(find('div.recipes #1 div.name').text().trim(), 'tacos');
   });
 });
 
