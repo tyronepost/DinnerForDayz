@@ -5,14 +5,11 @@
 </div>
 <div class="row">
   <div class="col-md-2">Ingredients:</div>
-  {{#each model.ingredients as |ingredient|}}
-  <div class="row">
-    <div class="col-md-2">
-      {{ingredient.name}}
-    </div>
-  </div>
-  {{/each}}
+
 </div>
+{{#each model.ingredients as |ingredient|}}
+  {{ingredient-view ingredient=ingredient}}
+{{/each}}
 <div class="row">
   <div class="col-md-2">Directions:</div>
   <div class="col-md-6">{{model.directions}}</div>
