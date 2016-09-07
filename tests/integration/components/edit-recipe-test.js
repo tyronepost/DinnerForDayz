@@ -7,7 +7,6 @@ moduleForComponent('edit-recipe', 'Integration | Component | edit recipe', {
 
 test('it renders with empty values when no model is passed', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
 
   this.render(hbs`{{edit-recipe}}`);
 
