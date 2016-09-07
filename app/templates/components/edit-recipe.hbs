@@ -1,8 +1,14 @@
 Name: {{input class='name' value=(mut (get recipe 'name'))}}
 {{name}}
 <br>
-Ingredients: {{textarea class='ingredients' value=(mut (get recipe 'ingredients'))}}
-{{ingredients}}
+Ingredients:
+{{#each recipe.ingredients as |ingredient|}}
+  <div class="row form-group" id={{ingredient.id}}>
+      <div class="col-md-4">{{one-way-input class="form-control" value=ingredient.name update=(action (mut ingredient.name))}}</div>
+      <div class="col-md-4">{{one-way-input class="form-control" value=ingredient.amount update=(action (mut ingredient.amount))}}</div>
+      <div class="col-md-4">{{one-way-input class="form-control" value=ingredient.unit update=(action (mut ingredient.unit))}}</div>
+  </div>
+{{/each}}
 <br>
 Directions: {{textarea class='directions' value=(mut (get recipe 'directions'))}}
 {{directions}}

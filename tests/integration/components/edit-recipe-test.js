@@ -14,9 +14,6 @@ test('it renders with empty values when no model is passed', function(assert) {
   let nameVal = this.$('.name').val();
   assert.equal(nameVal, '');
 
-  let ingredientVal = this.$('.ingredients').val();
-  assert.equal(ingredientVal, '');
-
   let directionsVal = this.$('.directions').val();
   assert.equal(directionsVal, '');
 });
@@ -33,9 +30,6 @@ test('it renders with values prefilled when model is passed', function(assert) {
 
   let nameVal = this.$('.name').val();
   assert.equal(nameVal, 'tacos');
-
-  let ingredientVal = this.$('.ingredients').val();
-  assert.equal(ingredientVal, 'salt');
 
   let directionsVal = this.$('.directions').val();
   assert.equal(directionsVal, 'microwave for 3 minutes');

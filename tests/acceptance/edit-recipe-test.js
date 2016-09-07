@@ -11,8 +11,4 @@ test('visiting /edit-recipe', function(assert) {
     assert.equal(currentURL(), '/recipes');
     assert.equal(find('div.recipes #1 div.edit').text().trim(), 'edit');
   });
-  // click('.edit');
-
-  // click('a.new');
-
 });
