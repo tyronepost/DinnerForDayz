@@ -1,0 +1,6 @@
+<div class="row form-group" id={{ingredient.id}}>
+      <div class="col-md-4">{{one-way-input class="form-control" value=ingredient.name update=(action (mut ingredient.name))}}</div>
+      <div class="col-md-4">{{one-way-input class="form-control" value=ingredient.amount update=(action (mut ingredient.amount))}}</div>
+      <div class="col-md-4">{{one-way-input class="form-control" value=ingredient.unit update=(action (mut ingredient.unit))}}</div>
+</div>
+
