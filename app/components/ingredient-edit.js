@@ -1,4 +1,11 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+const {
+  Component
+} = Ember;
+
+const options = ['LBS', 'TBSP', 'TSP', 'CUP', 'count'];
+
+export default Component.extend({
+  options: options
 });
