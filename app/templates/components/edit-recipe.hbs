@@ -1,3 +1,4 @@
+<div>
 Name: {{input class='name' value=(mut (get recipe 'name'))}}
 {{name}}
 <br>
@@ -10,3 +11,12 @@ Directions: {{textarea class='directions' value=(mut (get recipe 'directions'))}
 {{directions}}
 <br>
 <button class="submit" {{action "saveForm"}}>save</button>
+<button class="toggle" {{action "toggleModal"}}>toggle modal</button>
+</div>
+ {{#if showModal}}
+  {{#modal-dialog
+      close="toggleModal"
+      translucentOverlay=true}}
+      <h1>Hello Modal World</h1>
+  {{/modal-dialog}}
+{{/if}}

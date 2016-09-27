@@ -19,6 +19,10 @@ export default Component.extend({
       const recipe = get(this, 'recipe');
       console.log('recipe: ' + recipe);
       save(recipe);
+    },
+
+    toggleModal() {
+      this.toggleProperty('showModal');
     }
   }
 });
